@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - name: Getting clouds info from YC
+      get_cloud_list:
+        iam_token: '{"iam_token":"yZ4fYf6jrnWeXyCg"}'
+      register: result
+
+    - debug: var=result

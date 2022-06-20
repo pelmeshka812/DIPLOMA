@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: Getting folders info from YC
+      get_folder_list:
+        iam_token: '{"iam_token":"yZ4fYf6jrnWeXyCg"}'
+        cloud_id: '{{cloud_id}}'
+        pageSize:
+        pageToken:
+        filter:
+      register: result
+
+    - debug: var=result

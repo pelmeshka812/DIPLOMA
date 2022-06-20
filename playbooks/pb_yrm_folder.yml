@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+    - name: Create disk on YC
+      folder_present:
+        iam_token: '{{iam_token}}'
+        folder_id: '{{folder_id}}'
+        name:
+        description:
+        labels:
+        state: present
+      register: result
+
+    - debug: var=result

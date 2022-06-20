@@ -1,0 +1,16 @@
+- hosts: localhost
+  tasks:
+    - name: Create virtual machine on YC
+      create_cloud:
+        iam_token: '{"iam_token":"yZ4fYf6jrnWeXyCg"}'
+        folder_id: '{{folder_id}}'
+        name:
+        description:
+        labels:
+        zone_id: '{{zone_id}}'
+        platform_id: '{{platform_id}}'
+        resource_spec:
+        boot_disk_spec:
+      register: result
+
+    - debug: var=result

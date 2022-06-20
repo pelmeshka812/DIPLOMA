@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: Create a address vpc
+        yc_vpc_address:
+          folderId:
+          name:
+          description: "This is your address on vpc"
+          labels: yes
+          externalIpv4AddressSpec: no
+          requirements: no
+          state: present
+        register: result

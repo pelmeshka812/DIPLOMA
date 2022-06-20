@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - name: Getting folders info from YC
+      get_folder_list:
+        iam_token: '{{iam_token}}'
+        pageSize:
+        pageToken:
+      register: result
+
+    - debug: var=result

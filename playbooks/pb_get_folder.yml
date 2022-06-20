@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks:
+    - name: Getting folder info from YC
+      get_folder_list:
+        iam_token: '{"iam_token":"yZ4fYf6jrnWeXyCg"}'
+        folder_id: '{{folder_id}}'
+      register: result
+
+    - debug: var=result

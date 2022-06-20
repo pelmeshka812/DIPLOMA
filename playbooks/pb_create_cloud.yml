@@ -1,0 +1,11 @@
+- hosts: localhost
+  tasks:
+    - name: Create cloud on YC
+      create_cloud:
+        organization_id: '{{organization_id}}'
+        name: 'test_1'
+        description:
+        labels:
+      register: result
+
+    - debug: var=result
